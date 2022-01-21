@@ -10,7 +10,7 @@ function Calculator() {
 
   // Realizar a função do backSpace
   this.pressBackSpace = () => {
-    this.display.addEventListener('keydown', (e) => {
+    this.display.addEventListener('keydown', e => {
       if (e.keyCode === 8) {
         e.preventDefault();
         this.del();
@@ -20,7 +20,7 @@ function Calculator() {
 
   // Realizar a função do enter
   this.pressEnter = () => {
-    this.display.addEventListener('keyup', (e) => {
+    this.display.addEventListener('keyup', e => {
       if (e.keyCode === 13) {
         this.realizeCount();
       }
@@ -28,7 +28,7 @@ function Calculator() {
   };
 
   this.captureClick = () => {
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', e => {
       const el = e.target;
 
       if (el.classList.contains('btn-num')) this.addNum(el);
@@ -56,7 +56,7 @@ function Calculator() {
   };
 
   // Escrever
-  this.addNum = (el) => {
+  this.addNum = el => {
     this.display.value += el.innerText;
     this.display.focus();
   };
